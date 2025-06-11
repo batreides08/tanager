@@ -1,0 +1,30 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+h1 {
+  background-color: #ef3340;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+#map {
+  height: 90vh;
+  width: 100%;
+}
+
+.popup {
+  font-size: 14px;
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
