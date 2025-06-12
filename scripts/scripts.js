@@ -2,6 +2,7 @@ function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
     center: { lat: 9.9281, lng: -84.0907 },
+    gestureHandling: "greedy" // allows one-finger dragging on mobile
   });
 
   const properties = [
