@@ -32,10 +32,10 @@ function initMap() {
       title: property.title,
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        fillColor: "#ef3340",     // Red fill
+        fillColor: "#ef3340",
         fillOpacity: 1,
-        scale: 8,                 // Adjust size here
-        strokeColor: "#ffffff",  // White border
+        scale: 8,
+        strokeColor: "#ffffff",
         strokeWeight: 2
       }
     });
@@ -45,7 +45,7 @@ function initMap() {
         <div class="popup">
           <strong>${property.title}</strong><br>
           Precio: ${property.price}<br>
-          <img src="${property.image}" alt="${property.title}">
+          <img src="${property.image}" alt="Imagen de ${property.title}">
         </div>
       `
     });
@@ -55,4 +55,3 @@ function initMap() {
     });
   });
 }
-

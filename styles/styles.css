@@ -1,25 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   height: 100%;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-h1 {
+header {
   background-color: #ef3340;
   color: white;
   padding: 1rem;
   text-align: center;
-  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
 }
 
 #map {
   height: 90vh;
   width: 100%;
+  max-width: 100vw;
 }
 
 .popup {
   font-size: 14px;
+  max-width: 250px;
 }
 
 .popup img {
@@ -27,4 +42,33 @@ h1 {
   height: auto;
   margin-top: 0.5rem;
   border-radius: 4px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  .popup {
+    font-size: 13px;
+  }
+
+  #map {
+    height: 85vh;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .popup {
+    font-size: 12px;
+  }
+
+  #map {
+    height: 80vh;
+  }
 }
