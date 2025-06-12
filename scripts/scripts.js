@@ -2,7 +2,7 @@ function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
     center: { lat: 9.9281, lng: -84.0907 },
-    gestureHandling: "greedy" // allows one-finger dragging on mobile
+    gestureHandling: "greedy"
   });
 
   const properties = [
@@ -46,7 +46,7 @@ function initMap() {
         <div class="popup">
           <strong>${property.title}</strong><br>
           Precio: ${property.price}<br>
-          <img src="${property.image}" alt="Imagen de ${property.title}">
+          <img src="${property.image}" alt="Imagen de ${property.title}" style="width:100%; border-radius:4px; margin-top:4px;">
         </div>
       `
     });

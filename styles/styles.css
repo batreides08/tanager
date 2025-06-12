@@ -7,68 +7,147 @@ body, html {
   padding: 0;
   font-family: Arial, sans-serif;
   height: 100%;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #fff;
+  color: #000;
 }
 
 header {
-  background-color: #ef3340;
-  color: white;
-  padding: 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
   text-align: center;
 }
 
-main {
+.filters {
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 80px);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
 }
 
-#map {
-  height: 90vh;
-  width: 100%;
-  max-width: 100vw;
-}
-
-.popup {
-  font-size: 14px;
-  max-width: 250px;
-}
-
-.popup img {
-  width: 100%;
-  height: auto;
-  margin-top: 0.5rem;
+.filters input, .filters select, .filters button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  z-index: 10;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.25rem;
-  }
-
-  .popup {
-    font-size: 13px;
-  }
-
-  #map {
-    height: 85vh;
-  }
+.type-options button,
+.price-options button {
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1rem;
-  }
+.type-options .selected {
+  background-color: #000;
+  color: white;
+  font-weight: bold;
+}
 
-  .popup {
-    font-size: 12px;
-  }
+.price-toggle button {
+  width: 50%;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+}
 
+.price-toggle .active {
+  background-color: #000;
+  color: #fff;
+}
+
+.price-slider .slider-visual {
+  height: 40px;
+  background: linear-gradient(to right, #ccc 20%, #000 20%, #000 80%, #ccc 80%);
+  margin: 0.5rem 0;
+}
+
+.price-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 160px);
+}
+
+.listings {
+  width: 40%;
+  overflow-y: auto;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  background-color: #f8f8f8;
+}
+
+.property {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+}
+
+.property img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#map {
+  flex-grow: 1;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  .listings {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
   #map {
-    height: 80vh;
+    height: 60vh;
   }
 }

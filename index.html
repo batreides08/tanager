@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanager Real Estate Map</title>
   <link rel="stylesheet" href="styles/styles.css" />
@@ -9,9 +9,65 @@
 <body>
   <header>
     <h1>Tanager.com Map</h1>
+    <div class="filters">
+      <input type="text" placeholder="Search location..." />
+      <div class="dropdown">
+        <button id="priceBtn">Price</button>
+        <div class="dropdown-content price-options">
+          <div class="price-toggle">
+            <button class="active">List price</button>
+            <button>Monthly payment</button>
+          </div>
+          <div class="price-slider">
+            <div class="slider-visual"></div>
+          </div>
+          <div class="price-range">
+            <select><option>$ No min</option></select>
+            <span>-</span>
+            <select><option>$ No max</option></select>
+          </div>
+          <label><input type="checkbox" /> Price reduced</label>
+          <label><input type="checkbox" /> Builder promotions</label>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button id="typeBtn">Property Type</button>
+        <div class="dropdown-content type-options">
+          <button class="selected">Any</button>
+          <button>House</button>
+          <button>Condo</button>
+          <button>Townhome</button>
+          <button>Multi family</button>
+          <button>Mobile</button>
+          <button>Farm</button>
+          <button>Land</button>
+        </div>
+      </div>
+      <button>Save search</button>
+    </div>
   </header>
-  <main>
-    <div id="map" role="application" aria-label="Interactive map showing property listings"></div>
+  <main class="layout">
+    <section class="listings">
+      <div class="property">
+        <img src="images/escazu3.webp" alt="Casa en Escazú" />
+        <div>
+          <h2>$250,000</h2>
+          <p><strong>Casa en Escazú</strong></p>
+          <p>3 bed · 2 bath · 180 m²</p>
+          <button>Email Agent</button>
+        </div>
+      </div>
+      <div class="property">
+        <img src="images/staana1.webp" alt="Apartamento en Santa Ana" />
+        <div>
+          <h2>$180,000</h2>
+          <p><strong>Apartamento en Santa Ana</strong></p>
+          <p>2 bed · 2 bath · 120 m²</p>
+          <button>Email Agent</button>
+        </div>
+      </div>
+    </section>
+    <section id="map" role="application" aria-label="Interactive map showing property listings"></section>
   </main>
   <script src="scripts/scripts.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCt7Rk1cOaQ4cb8JpbHQt4Nfk-HjBMOcRQ&callback=initMap" async defer></script>
