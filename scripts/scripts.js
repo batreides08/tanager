@@ -8,19 +8,19 @@ function initMap() {
     {
       title: "Casa en Escazú",
       price: "$250,000",
-      image: "https://via.placeholder.com/300x150",
+      image: "images/escazu3.webp",
       position: { lat: 9.9194, lng: -84.1425 },
     },
     {
       title: "Apartamento en Santa Ana",
       price: "$180,000",
-      image: "https://via.placeholder.com/300x150",
+      image: "images/staana1.webp",
       position: { lat: 9.9364, lng: -84.1826 },
     },
     {
       title: "Villa en Nosara",
       price: "$450,000",
-      image: "https://via.placeholder.com/300x150",
+      image: "images/nosara3.webp",
       position: { lat: 9.9797, lng: -85.6500 },
     }
   ];
@@ -30,6 +30,14 @@ function initMap() {
       position: property.position,
       map,
       title: property.title,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillColor: "#ef3340",     // Red fill
+        fillOpacity: 1,
+        scale: 8,                 // Adjust size here
+        strokeColor: "#ffffff",  // White border
+        strokeWeight: 2
+      }
     });
 
     const infoWindow = new google.maps.InfoWindow({
@@ -47,3 +55,4 @@ function initMap() {
     });
   });
 }
+
