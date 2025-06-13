@@ -8,26 +8,22 @@
 </head>
 <body>
   <header>
-    <h1>Tanager.com Map</h1>
+    <h1>Tanager Real Estate</h1>
     <div class="filters">
       <input type="text" placeholder="Search location..." />
       <div class="dropdown">
         <button id="priceBtn">Price</button>
         <div class="dropdown-content price-options">
           <div class="price-toggle">
-            <button class="active">List price</button>
-            <button>Monthly payment</button>
+            
           </div>
           <div class="price-slider">
-            <div class="slider-visual"></div>
+            <label for="priceRange">Max Price: <span id="priceValue">$1,000,000</span></label>
+            <input type="range" id="priceRange" min="0" max="1000000" step="50000" value="1000000">
           </div>
           <div class="price-range">
-            <select><option>$ No min</option></select>
-            <span>-</span>
-            <select><option>$ No max</option></select>
+            
           </div>
-          <label><input type="checkbox" /> Price reduced</label>
-          <label><input type="checkbox" /> Builder promotions</label>
         </div>
       </div>
       <div class="dropdown">
@@ -50,19 +46,23 @@
     <section class="listings">
       <div class="property">
         <img src="images/escazu3.webp" alt="Casa en Escazú" />
-        <div>
+        <div class="property-details">
+          <p class="status">House for sale</p>
           <h2>$250,000</h2>
           <p><strong>Casa en Escazú</strong></p>
           <p>3 bed · 2 bath · 180 m²</p>
+          <p>Escazú, San José</p>
           <button>Email Agent</button>
         </div>
       </div>
       <div class="property">
         <img src="images/staana1.webp" alt="Apartamento en Santa Ana" />
-        <div>
+        <div class="property-details">
+          <p class="status">Apartment for sale</p>
           <h2>$180,000</h2>
           <p><strong>Apartamento en Santa Ana</strong></p>
           <p>2 bed · 2 bath · 120 m²</p>
+          <p>Santa Ana, San José</p>
           <button>Email Agent</button>
         </div>
       </div>

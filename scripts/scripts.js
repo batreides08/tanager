@@ -56,3 +56,16 @@ function initMap() {
     });
   });
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("priceRange");
+  const label = document.getElementById("priceValue");
+
+  const formatPrice = (val) => `$${parseInt(val).toLocaleString()}`;
+  label.textContent = formatPrice(slider.value);
+
+  slider.addEventListener("input", () => {
+    label.textContent = formatPrice(slider.value);
+  });
+});
